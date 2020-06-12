@@ -64,12 +64,12 @@ def test_step(model, x_test, y_test):
 
 for epoch in range(epochs):
     # train
-    for _ in range(len(train_dataset) - 1):
+    for _ in range(len(train_dataset)):
         x_train, y_train = next(train_dataset)
         train_step(model, optimizer, x_train, y_train)
 
     # validate
-    for _ in range(len(val_dataset) - 1):
+    for _ in range(len(val_dataset)):
         x_test, y_test = next(val_dataset)
         test_step(model, x_test, y_test)
 
